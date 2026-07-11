@@ -5,14 +5,14 @@ export const Navbar = () => {
 
   const links = [
     { to: "/", label: "Formulario" },
-    { to: "/mensual", label: "Proyección Mensual" },
-    { to: "/anual", label: "Proyección Anual" },
+    { to: "/mensual", label: "Proyeccion Mensual" },
+    { to: "/anual", label: "Proyeccion Anual" },
   ];
 
   return (
     <nav className="sticky top-6 z-50 mx-auto flex justify-center px-4">
       <div className="flex items-center justify-between w-full max-w-5xl">
-        
+
         {/* Logo flotante */}
         <Link to="/" className="flex items-center gap-2 group bg-slate-900/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/5 shadow-lg hidden sm:flex">
           <span className="text-xl">💰</span>
@@ -21,7 +21,7 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        {/* Barra de navegación central */}
+        {/* Barra de navegacion central */}
         <div className="flex items-center p-1.5 bg-[#201d2a]/80 backdrop-blur-xl rounded-full shadow-2xl border border-white/10 mx-auto sm:mx-0 gap-1">
           {links.map((link) => {
             const isActive = location.pathname === link.to;

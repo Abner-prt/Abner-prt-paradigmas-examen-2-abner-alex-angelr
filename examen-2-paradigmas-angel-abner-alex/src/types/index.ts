@@ -1,28 +1,28 @@
 // Datos que captura el formulario
 export interface SavingsFormData {
-  initialDeposit: number;   // P - Capital inicial
-  annualRate: number;        // r - Tasa de interés anual (porcentaje, ej: 5)
-  termYears: number;         // t - Plazo en años
+  initialDeposit: number;
+  annualRate: number;
+  termYears: number;
 }
 
-// Una fila de la proyección mensual
+// Una fila de la proyeccion mensual
 export interface MonthlyProjection {
-  month: number;             // Número de mes (1, 2, 3...)
-  balance: number;           // Saldo acumulado al mes n
-  monthlyInterest: number;   // Interés generado ese mes
+  month: number;
+  balance: number;
+  monthlyInterest: number;
 }
 
-// Una fila de la proyección anual
+// Una fila de la proyeccion anual
 export interface AnnualProjection {
-  year: number;              // Número de año (1, 2, 3...)
-  balance: number;           // Saldo acumulado al cierre del año
-  annualInterest: number;    // Interés generado ese año
+  year: number;
+  balance: number;
+  annualInterest: number;
 }
 
-// Resultado completo de los cálculos
+// Resultado completo de los calculos
 export interface CalculationResult {
   monthlyProjections: MonthlyProjection[];
   annualProjections: AnnualProjection[];
-  totalInterest: number;     // Interés total ganado
-  finalBalance: number;      // Saldo final
+  totalInterest: number;
+  finalBalance: number;
 }

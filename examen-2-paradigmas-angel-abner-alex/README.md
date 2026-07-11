@@ -1,77 +1,41 @@
-# React + TypeScript + Vite
+# Calculadora de Cuenta de Ahorros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicacion web frontend diseñada para simular el crecimiento de una cuenta de ahorros mediante interes compuesto con capitalizacion mensual.
 
-Currently, two official plugins are available:
+## Equipo de Desarrollo
+- Abner
+- Alex
+- Angel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias Utilizadas
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS 4**
+- **React Router v7**
 
-## React Compiler
+## Instrucciones para Ejecutar el Proyecto
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Abner-prt/Abner-prt-paradigmas-examen-2-abner-alex-angelr.git
+   ```
+2. Navegar a la carpeta e instalar dependencias:
+   ```bash
+   cd examen-2-paradigmas-angel-abner-alex
+   npm install
+   ```
+3. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-Note: This will impact Vite dev & build performances.
+## Vistas de la Aplicacion
+1. **Formulario**: Captura el deposito inicial, la tasa de interes anual y el plazo en años. Validado para asegurar datos correctos antes del calculo.
+2. **Proyeccion Mensual**: Tabla que desglosa mes a mes el saldo acumulado y el interes generado durante cada periodo mensual.
+3. **Proyeccion Anual**: Tabla que resume año tras año el saldo al cierre y el total de intereses generados en dicho año.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+## Formula de Interes Compuesto Utilizada
+El calculo asume una capitalizacion mensual constante:
+- `Saldo(n) = P * (1 + i)^n`
+Donde `P` es el capital inicial, e `i` es la tasa de interes mensual (tasa anual / 12).
