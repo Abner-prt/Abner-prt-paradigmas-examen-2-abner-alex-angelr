@@ -2,16 +2,16 @@ import React from "react";
 import type { CalculationResult, SavingsFormData } from "../types";
 import { ProjectionTable, formatCurrency } from "../components/ProjectionTable";
 
-interface MonthlyProjectionPageProps {
+interface AnnualProjectionPageProps {
   result: CalculationResult | null;
   formData: SavingsFormData | null;
 }
 
-export const MonthlyProjectionPage: React.FC<MonthlyProjectionPageProps> = ({ result, formData }) => {
+export const AnnualProjectionPage: React.FC<AnnualProjectionPageProps> = ({ result, formData }) => {
   const columns = [
-    { header: "Mes", accessor: "month" },
+    { header: "Año", accessor: "year" },
     { header: "Saldo acumulado", accessor: "balance" },
-    { header: "Interés del mes", accessor: "monthlyInterest" },
+    { header: "Interés del año", accessor: "annualInterest" },
   ];
 
   return (
@@ -35,22 +35,22 @@ export const MonthlyProjectionPage: React.FC<MonthlyProjectionPageProps> = ({ re
           
           <div className="flex flex-wrap gap-6 text-right">
             <div>
-              <p className="text-slate-400 text-sm">Interés total</p>
-              <p className="text-2xl font-bold text-emerald-400">{formatCurrency(result.totalInterest)}</p>
+              <p className="text-slate-400 text-sm">Interés total proyectado</p>
+              <p className="text-2xl font-bold text-amber-400">{formatCurrency(result.totalInterest)}</p>
             </div>
             <div>
               <p className="text-slate-400 text-sm">Saldo final</p>
-              <p className="text-2xl font-bold text-emerald-400">{formatCurrency(result.finalBalance)}</p>
+              <p className="text-2xl font-bold text-amber-400">{formatCurrency(result.finalBalance)}</p>
             </div>
           </div>
         </div>
       )}
 
       <ProjectionTable
-        title="Proyección mensual"
+        title="Proyección Anual"
         columns={columns}
-        data={(result?.monthlyProjections as unknown as Record<string, number>[]) || []}
-        emptyMessage="No hay datos para mostrar. Ve al formulario e ingresa tus datos para calcular la proyección."
+        data={(result?.annualProjections as unknown as Record<string, number>[]) || []}
+        emptyMessage="No hay datos para mostrar. Llena el formulario primero."
       />
     </div>
   );

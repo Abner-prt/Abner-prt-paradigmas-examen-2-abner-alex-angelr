@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { FormPage } from "./pages/FormPage";
 import { MonthlyProjectionPage } from "./pages/MonthlyProjectionPage";
+import { AnnualProjectionPage } from "./pages/AnnualProjectionPage";
 import type { CalculationResult, SavingsFormData } from "./types";
 
 function App() {
@@ -26,15 +27,7 @@ function App() {
           />
           <Route
             path="/anual"
-            element={
-              <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-8">
-                <div className="text-center">
-                  <p className="text-4xl mb-4">📈</p>
-                  <h2 className="text-xl font-semibold text-slate-300">Proyeccion anual</h2>
-                  <p className="text-slate-500 mt-2">Proximamente — angel la implementara</p>
-                </div>
-              </div>
-            }
+            element={<AnnualProjectionPage result={result} formData={formData} />}
           />
         </Routes>
       </div>
