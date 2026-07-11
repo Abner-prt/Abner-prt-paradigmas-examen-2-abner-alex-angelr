@@ -5,24 +5,16 @@ export const Navbar = () => {
 
   const links = [
     { to: "/", label: "Formulario" },
-    { to: "/mensual", label: "Proyeccion Mensual" },
-    { to: "/anual", label: "Proyeccion Anual" },
+    { to: "/mensual", label: "Proyección Mensual" },
+    { to: "/anual", label: "Proyección Anual" },
   ];
 
   return (
     <nav className="sticky top-6 z-50 mx-auto flex justify-center px-4">
-      <div className="flex items-center justify-between w-full max-w-5xl">
+      <div className="flex items-center justify-center w-full max-w-5xl">
 
-        {/* Logo flotante */}
-        <Link to="/" className="flex items-center gap-2 group bg-slate-900/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/5 shadow-lg hidden sm:flex">
-          <span className="text-xl">💰</span>
-          <span className="text-sm font-semibold text-white tracking-tight group-hover:text-blue-400 transition-colors duration-200">
-            Calculadora Ahorros
-          </span>
-        </Link>
-
-        {/* Barra de navegacion central */}
-        <div className="flex items-center p-1.5 bg-[#201d2a]/80 backdrop-blur-xl rounded-full shadow-2xl border border-white/10 mx-auto sm:mx-0 gap-1">
+        {/* Barra de navegación central */}
+        <div className="flex items-center p-1.5 bg-[#201d2a]/80 backdrop-blur-xl rounded-full shadow-2xl border border-white/10 gap-1">
           {links.map((link) => {
             const isActive = location.pathname === link.to;
 
@@ -51,9 +43,6 @@ export const Navbar = () => {
             );
           })}
         </div>
-
-        {/* Spacer invisible para equilibrar el logo */}
-        <div className="hidden sm:block w-[180px]"></div>
 
       </div>
     </nav>

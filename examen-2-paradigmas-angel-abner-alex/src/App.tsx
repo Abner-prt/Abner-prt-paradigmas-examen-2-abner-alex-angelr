@@ -17,19 +17,28 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="min-h-screen bg-[#130f1c] text-white flex flex-col">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<FormPage onCalculate={handleCalculate} />} />
-          <Route
-            path="/mensual"
-            element={<MonthlyProjectionPage result={result} formData={formData} />}
-          />
-          <Route
-            path="/anual"
-            element={<AnnualProjectionPage result={result} formData={formData} />}
-          />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<FormPage onCalculate={handleCalculate} />} />
+            <Route
+              path="/mensual"
+              element={<MonthlyProjectionPage result={result} formData={formData} />}
+            />
+            <Route
+              path="/anual"
+              element={<AnnualProjectionPage result={result} formData={formData} />}
+            />
+          </Routes>
+        </div>
+        
+        {/* Footer simple para dar cierre al diseño */}
+        <footer className="py-6 text-center border-t border-white/5 mt-auto">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} Proyecto de Examen • <span className="text-slate-400">Abner, Alex & Ángel</span>
+          </p>
+        </footer>
       </div>
     </BrowserRouter>
   );

@@ -65,12 +65,12 @@ export const FormPage: React.FC<FormPageProps> = ({ onCalculate }) => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white">
-      <div className="w-full max-w-lg p-8 rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:shadow-blue-500/5 hover:border-slate-700">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 bg-gradient-to-br from-[#1c1626] via-[#130f1c] to-[#201d2a] text-white animate-fade-in-up">
+      <div className="w-full max-w-lg p-8 rounded-2xl border border-white/10 bg-[#201d2a]/60 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:shadow-fuchsia-500/5 hover:border-white/20">
 
         {/* Header del Formulario */}
         <div className="flex flex-col items-center mb-8 text-center">
-          <div className="p-3 bg-blue-600/10 rounded-2xl border border-blue-500/20 text-blue-400 mb-4 shadow-lg shadow-blue-500/5">
+          <div className="p-3 bg-fuchsia-600/10 rounded-2xl border border-fuchsia-500/20 text-fuchsia-400 mb-4 shadow-lg shadow-fuchsia-500/5">
             <svg
               className="w-8 h-8"
               fill="none"
@@ -151,7 +151,7 @@ export const FormPage: React.FC<FormPageProps> = ({ onCalculate }) => {
 
           <button
             type="submit"
-            className="w-full mt-4 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 cursor-pointer text-center text-lg"
+            className="w-full mt-4 px-6 py-3.5 bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-fuchsia-600 hover:from-cyan-400 hover:via-fuchsia-400 hover:to-fuchsia-500 text-white font-semibold rounded-xl transition-all duration-300 transform active:scale-[0.98] shadow-[0_0_20px_rgba(192,132,252,0.3)] hover:shadow-[0_0_25px_rgba(192,132,252,0.5)] cursor-pointer text-center text-lg"
           >
             Calcular Proyección
           </button>

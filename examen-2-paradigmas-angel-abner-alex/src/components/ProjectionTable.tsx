@@ -29,7 +29,7 @@ export const ProjectionTable: React.FC<ProjectionTableProps> = ({
   if (data.length === 0) {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-8">
-        <div className="text-center bg-slate-900/60 border border-slate-800 rounded-2xl p-10 backdrop-blur-xl">
+        <div className="text-center bg-[#201d2a]/80 border border-white/10 rounded-2xl p-10 backdrop-blur-xl shadow-2xl">
           <p className="text-4xl mb-4">📭</p>
           <p className="text-slate-400 text-lg">{emptyMessage}</p>
         </div>
@@ -43,14 +43,14 @@ export const ProjectionTable: React.FC<ProjectionTableProps> = ({
         {title}
       </h2>
 
-      <div className="overflow-x-auto rounded-2xl border border-slate-800 shadow-xl">
+      <div className="overflow-x-auto rounded-2xl border border-white/10 shadow-xl">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-slate-800/80">
+            <tr className="bg-[#1c1626]/80">
               {columns.map((col) => (
                 <th
                   key={col.accessor}
-                  className="px-6 py-4 text-sm font-semibold text-blue-400 uppercase tracking-wider"
+                  className="px-6 py-4 text-sm font-semibold text-fuchsia-400 uppercase tracking-wider"
                 >
                   {col.header}
                 </th>
@@ -61,7 +61,7 @@ export const ProjectionTable: React.FC<ProjectionTableProps> = ({
             {data.map((row, idx) => (
               <tr
                 key={idx}
-                className="border-t border-slate-800/50 hover:bg-slate-800/40 transition-colors duration-200"
+                className="border-t border-white/5 hover:bg-white/5 transition-colors duration-200"
               >
                 {columns.map((col) => (
                   <td

@@ -38,7 +38,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         min={min}
         max={max}
         step={step}
-        className="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm shadow-inner text-lg hover:border-slate-600"
+        className="w-full px-4 py-3 rounded-xl border border-white/10 bg-[#130f1c]/50 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm shadow-inner text-lg hover:border-white/20"
       />
     </div>
   );

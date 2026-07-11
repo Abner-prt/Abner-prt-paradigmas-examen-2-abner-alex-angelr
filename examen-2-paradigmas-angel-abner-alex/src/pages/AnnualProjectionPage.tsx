@@ -15,9 +15,9 @@ export const AnnualProjectionPage: React.FC<AnnualProjectionPageProps> = ({ resu
   ];
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto animate-fade-in-up">
       {formData && result && (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 flex flex-wrap gap-6 justify-between items-center shadow-lg">
+        <div className="bg-[#201d2a] border border-white/10 rounded-2xl p-6 mb-8 flex flex-wrap gap-6 justify-between items-center shadow-lg">
           <div className="flex flex-wrap gap-6">
             <div>
               <p className="text-slate-400 text-sm">Capital inicial</p>

@@ -15,9 +15,9 @@ export const MonthlyProjectionPage: React.FC<MonthlyProjectionPageProps> = ({ re
   ];
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto animate-fade-in-up">
       {formData && result && (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 flex flex-wrap gap-6 justify-between items-center shadow-lg">
+        <div className="bg-[#201d2a] border border-white/10 rounded-2xl p-6 mb-8 flex flex-wrap gap-6 justify-between items-center shadow-lg">
           <div className="flex flex-wrap gap-6">
             <div>
               <p className="text-slate-400 text-sm">Capital inicial</p>
@@ -36,11 +36,11 @@ export const MonthlyProjectionPage: React.FC<MonthlyProjectionPageProps> = ({ re
           <div className="flex flex-wrap gap-6 text-right">
             <div>
               <p className="text-slate-400 text-sm">Interés total</p>
-              <p className="text-2xl font-bold text-emerald-400">{formatCurrency(result.totalInterest)}</p>
+              <p className="text-2xl font-bold text-cyan-400">{formatCurrency(result.totalInterest)}</p>
             </div>
             <div>
               <p className="text-slate-400 text-sm">Saldo final</p>
-              <p className="text-2xl font-bold text-emerald-400">{formatCurrency(result.finalBalance)}</p>
+              <p className="text-2xl font-bold text-cyan-400">{formatCurrency(result.finalBalance)}</p>
             </div>
           </div>
         </div>
