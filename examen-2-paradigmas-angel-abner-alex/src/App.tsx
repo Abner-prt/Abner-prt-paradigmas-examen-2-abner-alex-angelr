@@ -1,13 +1,19 @@
-// No need to import useState
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { FormPage } from "./pages/FormPage";
+import { MonthlyProjectionPage } from "./pages/MonthlyProjectionPage";
 import type { CalculationResult, SavingsFormData } from "./types";
 
 function App() {
-  const handleCalculate = (formData: SavingsFormData, calcResult: CalculationResult) => {
-    console.log("Calculando...", formData, calcResult);
+  const [formData, setFormData] = useState<SavingsFormData | null>(null);
+  const [result, setResult] = useState<CalculationResult | null>(null);
+
+  const handleCalculate = (data: SavingsFormData, calcResult: CalculationResult) => {
+    setFormData(data);
+    setResult(calcResult);
   };
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-slate-950 text-white">
@@ -16,15 +22,7 @@ function App() {
           <Route path="/" element={<FormPage onCalculate={handleCalculate} />} />
           <Route
             path="/mensual"
-            element={
-              <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-8">
-                <div className="text-center">
-                  <p className="text-4xl mb-4">📊</p>
-                  <h2 className="text-xl font-semibold text-slate-300">Proyección Mensual</h2>
-                  <p className="text-slate-500 mt-2">Próximamente — Ángel la implementará</p>
-                </div>
-              </div>
-            }
+            element={<MonthlyProjectionPage result={result} formData={formData} />}
           />
           <Route
             path="/anual"
@@ -32,8 +30,8 @@ function App() {
               <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-8">
                 <div className="text-center">
                   <p className="text-4xl mb-4">📈</p>
-                  <h2 className="text-xl font-semibold text-slate-300">Proyección Anual</h2>
-                  <p className="text-slate-500 mt-2">Próximamente — Ángel la implementará</p>
+                  <h2 className="text-xl font-semibold text-slate-300">Proyeccion anual</h2>
+                  <p className="text-slate-500 mt-2">Proximamente — angel la implementara</p>
                 </div>
               </div>
             }
